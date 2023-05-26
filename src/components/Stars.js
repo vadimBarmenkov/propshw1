@@ -6,9 +6,7 @@ export const Stars = (props) => {
     const stars = [];
 
     if(count >= 1 && count <= 5){
-        for (let i = 0; i < count; i++){
-            stars.push(<Star/>);
-        }
+        [...Array(count)].map((_, idx) => <li key={idx}><Star /></li>)
         return(<ul className="card-body-stars u-clearfix">{stars}</ul>)
     }
 
